@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     var $grid = $("#tblGrid");
+    //ShowHoverPopUp();
 
     // custom formatter to create the hyperlink 
     function OrderID_Link(cellvalue, options, rowObject) {
@@ -13,7 +14,7 @@ $(document).ready(function () {
         document.location.href = "ViewContact.aspx?NoteID=" + selectedRowId;
     }
 
-    function ShowHoverPopUp() {
+    function SetHoverPopUp() {
         var moveLeft = 0,
                 moveDown = 0;
 
@@ -23,8 +24,14 @@ $(document).ready(function () {
             moveLeft = $(this).outerWidth();
             moveDown = ($(target).outerHeight() / 2);
         }, function () {
-            var target = '#' + ($(this).attr('data-popbox'));
-            $(target).hide();
+            //var target = '#' + ($(this).attr('data-popbox'));
+            //$(target).hide();
+        });
+
+        $('div#pop2').hover(function (e) {
+
+        }, function () {
+            $(this).hide();
         });
 
         $('a.popper').mousemove(function (e) {
@@ -99,7 +106,7 @@ $(document).ready(function () {
             autoencode: true,
             pgbuttons: true,
             rownumbers: true,
-            loadComplete: ShowHoverPopUp,
+            loadComplete: SetHoverPopUp,
             //scrollOffset: 2,
             //autowidth: true,
             //toolbar: [true, "top"],
