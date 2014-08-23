@@ -5,12 +5,13 @@
     <link href="jqGrid-CSS/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
     <link href="jqGrid-CSS/ui.jqgrid.css" rel="stylesheet" />
     <link href="jqGrid-CSS/ui.multiselect.css" rel="stylesheet" />
-    <link href="jqGrid-CSS/searchFilter.css" rel="stylesheet" /> <!--good to have. not mandatory-->
+    <link href="jqGrid-CSS/searchFilter.css" rel="stylesheet" />
+    <link href="jQueryHoverPopup/jQueryHover.css" rel="stylesheet" />
 
     <script src="jqGrid/jquery-1.11.0.min.js"></script>
     <script src="jqGrid/jquery-ui-1.8.2.custom.min.js"></script>
     <script src="jqGrid/ui.multiselect.js"></script>
-    <script src="jqGrid/grid.locale-en.js"></script>   <!--very important to include, or else weird errors comes up-->
+    <script src="jqGrid/grid.locale-en.js"></script>    <!--very important to include, or else weird errors comes up-->
     <script src="jqGrid/jquery.jqGrid.min.js"></script>
     <!--<script src="jqGrid/grid.jqueryui.js"></script>-->
 
@@ -20,6 +21,18 @@
     <table id="tblGrid"></table>
     <div id="divPager"></div>
     <input type="button" id="btnGet" value="Get Data" />
+
+    <!--<div id="pop1" class="popbox">
+        <h2>Success!</h2>
+        <p>This is an example popbox.</p>
+    </div>-->
+    <div id="pop2" class="popbox">
+        <h2>Danger!</h2>
+        <p>Don't let this popbox go off the screen!</p>
+    </div>
+
+    <!--This is a popbox test.  <a href="#" class="popper" data-popbox="pop1">Hover here</a> to see how it works.  -->
+    <!--You can also hover <a href="#" class="popper" data-popbox="pop2">here</a> to see a different example.-->
 </body>
 
 </html>
