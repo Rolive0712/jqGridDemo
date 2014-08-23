@@ -29,7 +29,7 @@ $(document).ready(function () {
         });
 
         $('div#pop2').hover(function (e) {
-
+            //don't do anything here. hide once user hovers outside the popup
         }, function () {
             $(this).hide();
         });
