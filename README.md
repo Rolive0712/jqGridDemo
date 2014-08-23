@@ -8,5 +8,7 @@ jqGridDemo
   . Row Filter
   . Column filter on each column
   . Show/Hide column using modal popup
-  . Advanced Search
+  . Advanced Search 
   . Hover popup on hovering over the hyperlink added in the first column of grid
+
+3. Hover popup implemented as per link: http://www.sundoginteractive.com/sunblog/posts/jquery-hover-box
