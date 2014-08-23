@@ -3,20 +3,6 @@ $(document).ready(function () {
 
     var $grid = $("#tblGrid");
 
-    // event handler to call when clicking the hyperlink
-    function linkWindowOpener(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        var o = $(event.currentTarget);
-        var url = o.attr('href');
-        window.open(url);
-        return false;
-    }
-    // jQuery extenision function I wrote to get the HTML of an element
-    // returns the HTML of an element. It works by wrapping the element 
-    // inside a DIV and calling DIV.html(). It then returns the element back to 
-    // it's original DOM location
-
     // custom formatter to create the hyperlink 
     function OrderID_Link(cellvalue, options, rowObject) {
         var selectedRowId = options.rowId;
