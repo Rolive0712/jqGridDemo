@@ -11,7 +11,8 @@
     <script src="jqGrid/jquery-1.11.0.min.js"></script>
     <script src="jqGrid/jquery-ui-1.8.2.custom.min.js"></script>
     <script src="jqGrid/ui.multiselect.js"></script>
-    <script src="jqGrid/grid.locale-en.js"></script>    <!--very important to include, or else weird errors comes up-->
+    <script src="jqGrid/grid.locale-en.js"></script>
+    <!--very important to include, or else weird errors comes up-->
     <script src="jqGrid/jquery.jqGrid.min.js"></script>
     <!--<script src="jqGrid/grid.jqueryui.js"></script>-->
 
@@ -27,12 +28,19 @@
         <p>This is an example popbox.</p>
     </div>-->
     <div id="pop2" class="popbox">
-        <h2>Danger!</h2>
-        <p>Don't let this popbox go off the screen!</p>
+        <table id="tblPopUp">
+            <tr>
+                <td><a href="#">
+                    <img src="Images/Windows-Live-Mesh-icon.png" /></a>
+                </td>
+                <td><a href="#">
+                    <img src="Images/Windows-Media-Center-icon.png" /></a>
+                </td>
+                <td><a href="#">
+                    <img src="Images/Windows-Stand-By-icon.png" /></a> </td>
+            </tr>
+        </table>
     </div>
-
-    <!--This is a popbox test.  <a href="#" class="popper" data-popbox="pop1">Hover here</a> to see how it works.  -->
-    <!--You can also hover <a href="#" class="popper" data-popbox="pop2">here</a> to see a different example.-->
 </body>
 
 </html>
