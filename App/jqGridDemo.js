@@ -1,9 +1,11 @@
 /// <reference path="_references.js" />
 $(document).ready(function () {
 
+    var $grid = $("#tblGrid");
+
     function BindGrid(data) {
 
-        $("#tblGrid").jqGrid({ //set your grid id
+        $grid.jqGrid({ //set your grid id
             datastr: data, //insert data from the data object we created above
             datatype: "jsonstring",
             //datatype: "json",
@@ -11,12 +13,17 @@ $(document).ready(function () {
             //contentType: "application/json; charset-utf-8",
             width: 1300, //specify width; optional
             colNames: ['Order ID', 'Customer ID', 'Ship Name', 'Ship City', 'Ship Country'],
+            col: {
+                caption: "Show/Hide Columns",
+                bSubmit: "Submit",
+                bCancel: "Cancel"
+            },
             colModel: [
-                { name: 'OrderID', width: 60 },
-                { name: 'CustomerID', width: 90 },
-                { name: 'ShipName', width: 100 },
-                { name: 'ShipCity', width: 80, align: "right" },
-                { name: 'ShipCountry', width: 80, align: "right" }
+                { name: 'OrderID', width: 60, sortable: true },
+                { name: 'CustomerID', width: 90, sortable: true },
+                { name: 'ShipName', width: 100, sortable: true },
+                { name: 'ShipCity', width: 80, align: "right", sortable: true },
+                { name: 'ShipCountry', width: 80, align: "right", sortable: true }
             ],
             //jsonReader: {
             //    root: "rows",
@@ -28,7 +35,7 @@ $(document).ready(function () {
             //    id: "id",
             //    userdata: "userdata"
             //},
-         
+            sortable: true,
             pager: '#divPager', //set your pager div id
             sortname: 'OrderID', //the column according to which data is to be sorted; optional
             viewrecords: true, //if true, displays the total number of records, etc. as: &quot;View X to Y out of Z”; optional
@@ -41,12 +48,25 @@ $(document).ready(function () {
             pgbuttons: true,
             rownumbers: true,
             scrollOffset: 2,
+            //autowidth: true,
+            //toolbar: [true, "top"],
+            //shrinkToFit: false,
+            //hidegrid: false,
+            //loadui: 'block'
             altrows: true,
             altclass: 'myAltRowClass',
             caption: "jqGrid Example" //title of grid
         });
-        $("#tblGrid").jqGrid('navGrid', "#divPager", { edit: false, add: false, del: false, search: true });
-        $("#tblGrid").jqGrid('inlineNav', "#divPager");
+
+        /*column chooser*/
+        $grid.jqGrid('navGrid', '#divPager', { add: false, edit: false, del: false, search: true, refresh: false });
+        $grid.jqGrid('navButtonAdd', '#divPager', {
+            caption: "Columns",
+            title: "Reorder Columns",
+            onClickButton: function () {
+                $grid.jqGrid('columnChooser');
+            }
+        });
 
     }
 
